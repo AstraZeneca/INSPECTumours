@@ -33,7 +33,7 @@ Critical columns:
 * treatment - there must be a group called "Control" (or "control") as the reference group
 * animal_id 
 * day (day after tumour implantation) 
-* tumour_volume - mm^3
+* tumour_volume - $mm^3$
 
 There should be a control group for each study_id.
 
@@ -45,14 +45,14 @@ Critical columns:
 * treatment – only contain the group called "Control" (or "control")
 * animal_id 
 * day (day after tumour implantation) 
-* tumour_volume – mm^3
+* tumour_volume – $mm^3$
 
 
 ### 2.1.2 Data quality Control (QC)
 
 **Automatic QC**
 
-* Tumour volumes less than 15 mm^3 are replaced by 15 mm^3 .
+* Tumour volumes less than 15 $mm^3$ are replaced by 15 $mm^3$.
 * Animals with measurements less than "Min number of data points for one animal" will be deleted. The recommendation is to use "Min number of data points for one animal" = 3 but you can change it. 
  
 **Manually outlier removal**
@@ -185,14 +185,14 @@ In order to compare the tumour responders from different treatment groups, a Bay
 $$
 Tumour.classification =  
 \begin{cases}
-\textit{0 (non-responder), if} \; y^* \leq \mu_1 \newline
-\textit{1 (modest responder), if} \; \mu_1 < y^* \leq \mu_2 \newline
-\textit{2 (stable responder), if} \; \mu_2 < y^* \leq \mu_3 \newline
+\textit{0 (non-responder), if } y^* \leq \mu_1 \newline
+\textit{1 (modest responder), if } \mu_1 < y^* \leq \mu_2 \newline
+\textit{2 (stable responder), if } \mu_2 < y^* \leq \mu_3 \newline
 \textit{3 (regressing responder) other}\newline
 \end{cases}
 $$
 
-with $$y^*_{ijk} = b_j + \alpha_i + e_{ijk}, $$ where $b_j$ indicate the mean of tumour classification for the *j* th group; $\alpha_i \sim N(0, \sigma_{study}^2)$ is the study-to-study variability and $e_{ijk} \sim N(0, \sigma^2).$ From this model, we are able to compare the treatment group through the team $\mu_i$. 
+with $$y_{ijk}^* = b_j + \alpha_i + e_{ijk}, $$ where $b_j$ indicate the mean of tumour classification for the *j* th group; $\alpha_i \sim N(0, \sigma_{study}^2)$ is the study-to-study variability and $e_{ijk} \sim N(0, \sigma^2).$ From this model, we are able to compare the treatment group through the team $\mu_i$. 
 
 ## 3.4 References 
 
